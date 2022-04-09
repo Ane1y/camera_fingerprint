@@ -28,10 +28,10 @@ def main():
     :return:
     """
     try:
-        ff_dirlist = np.array(sorted(glob('test/data/ff_s10_first/*.JPG')))
+        ff_dirlist = np.array(sorted(glob('test/data/ff/*.JPG')))
         ff_device = np.array([os.path.split(i)[1].rsplit('_', 1)[0] for i in ff_dirlist])
 
-        nat_dirlist = np.array(sorted(glob('test/data/nat_s10_first/*.JPG')))
+        nat_dirlist = np.array(sorted(glob('test/data/nat/*.JPG')))
         nat_device = np.array([os.path.split(i)[1].rsplit('_', 1)[0] for i in nat_dirlist])
 
         print('Computing fingerprints')
@@ -90,7 +90,10 @@ def main():
         print('AUC on PCE {:.2f}, expected {:.2f}'.format(stats_pce['auc'], 0.81))
 
     except UndefinedMetricWarning:
-        print("Изображения одинаковые!")
+        if np.all(gt) == True:
+            print("Он был в Берлине в тот день! Это с его устройства было сделано фото. Вы получили +100 очков репутации")
+        else:
+            print("Он не был в Берлине в тот день! Вы подозреваете не того человека, попробуйте снова")
 
 if __name__ == '__main__':
     main()
