@@ -1,9 +1,7 @@
 # -*- coding: UTF-8 -*-
 """
-@author: Luca Bondi (luca.bondi@polimi.it)
-@author: Paolo Bestagini (paolo.bestagini@polimi.it)
-@author: Nicolò Bonettini (nicolo.bonettini@polimi.it)
-Politecnico di Milano 2018
+The idea was based on the work of Luca Bondi (luca.bondi@polimi.it), Paolo Bestagini (paolo.bestagini@polimi.it), Nicolò Bonettini (nicolo.bonettini@polimi.it)
+https://github.com/polimi-ispl/prnu-python
 """
 
 import os
